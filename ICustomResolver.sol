@@ -11,9 +11,9 @@ interface ICustomResolver.sol {
         string mappedAddress;
     }
 
-    /// @notice Returns the mapped details of a name.ticker
+    /// @notice Returns the mapped details of a name
     /// @dev Returns type of MappedAddress
-    function resolve(string memory _name_ticker)
+    function resolve(string memory _name)
         external
         view
         returns (MappedAddress memory);
