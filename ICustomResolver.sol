@@ -14,14 +14,11 @@ interface ICustomResolver {
         string mappedAddress;
     }
 
-    /// @notice Returns the mapped details of a name
-    /// @dev Returns type of MappedAddress
-    function resolve(string memory _name)
+    function resolve(string memory _name_ticker)
         external
         view
         returns (MappedAddress memory);
 
-    /// @notice Returns the name belonging to a mapped information
     function reverseLookup(string memory _address)
         external
         view
