@@ -12,7 +12,7 @@ interface ICustomNameService {
     }
 
     /// @dev Do not include the ticker
-    function getResolve(
+    function resolve(
         string memory _name,
         uint256 _resolverIndex
     ) external view returns (ICustomResolver.MappedAddress memory);
