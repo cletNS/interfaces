@@ -1,25 +1,24 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-import "https://github.com/cletNS/interfaces/blob/master/ICustomResolver.sol";
-
-interface ICustomNameService {
-    struct Resolver {
-        string baseTicker;
-        string tickerName;
-        string tickerIcon;
+interface ICustomResolver {
+    struct Ticker {
+        string name;
         string ticker;
+        string icon;
+        string tag;
     }
 
-    /// @dev Do not include the ticker
-    function getResolve(
-        string memory _name,
-        uint256 _resolverIndex
-    ) external view returns (ICustomResolver.MappedAddress memory);
+    struct MappedAddress {
+        Ticker ticker;
+        string mappedAddress;
+    }
 
-    /// @notice Returns the name belonging to a mapped information
+    function resolve(
+        string memory _name_ticker
+    ) external view returns (MappedAddress memory);
+
     function reverseLookup(
-        string memory _addess,
-        uint256 _resolverIndex
+        string memory _address
     ) external view returns (string memory);
 }
